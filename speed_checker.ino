@@ -1,4 +1,5 @@
 #include <LiquidCrystal.h>
+
 const int rs = 7, en = 6, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 int sen1=11;
@@ -16,7 +17,6 @@ void setup()
   lcd.setCursor(0,0);
   lcd.print("Speed=");
 }
-
 void loop()
 {
   while(digitalRead(sen1)==0);
@@ -41,11 +41,7 @@ void loop()
   lcd.setCursor(3,1);
   lcd.print(velocity);
   lcd.print(" Km/hr   ");
-   //delay(500);
-   //lcd.setCursor(3,1);
-   //lcd.print("            ");
-   //delay(500);
-  //}
+  
   if (velocity > 2){
     digitalWrite(13,HIGH);
     delay(5000);
